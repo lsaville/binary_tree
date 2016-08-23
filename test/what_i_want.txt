@@ -1,0 +1,50 @@
+what I want from my classes (node, tree)
+from the node class:
+  it holds data (I'm not sure exactly how it will hold the two pieces rating and title prolly just two vars)
+  it has a left that starts as nil
+  it has a right that starts as nil
+  the left and right need to be attr_accessor
+
+from the tree class:
+  it needs a root
+  it needs an insert method
+    this method needs to check its value against the roots rating value and go left if less than
+    and go right if greater than. When it encounters a node and wants to go either right or left
+    but it finds a nil there, it should replace that nil value with itself (becoming the left or right
+    value of that parent node)
+
+  it needs an include? method(score)
+    which runs through checking just like the insert method, but if it finds a matching value it switched its
+    default value from false to true and returns that. if it never encounters a match it simply remains false
+    and returns that
+
+  it needs a depth_of method(score)
+    This is another variation of searching or inserting but I imagine it to have a counter that increases when
+    it passes a node in the searching and returns the value of that counter.
+
+  it needs a max method
+    This method should always go right in the tree till it reaches the end and return the title and score
+    of the movie there
+
+  it needs a min method
+    This method should traverse the tree always going left till it reaches the end and return the title and
+    score of the node there.
+
+  it needs a sort method
+    this apparently should traverse the tree and return an array of hashes that are in ascending order.
+
+  it needs a load method
+    that inserts a shitload of titles?
+
+  it needs a health method
+
+  max through sort returns hashes...
+  
+
+
+
+  93, Bill & Ted's Excellent Adventure
+  75, French Dirty
+  50, Bratz Go To Paris
+  25, Assassination
+  2, Full Metal Jacket
