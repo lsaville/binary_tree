@@ -36,8 +36,10 @@ class BinarySearchTreeTest < MiniTest::Test
     tree.insert(16, "Johnny English")
     tree.insert(92, "Sharknado 3")
     tree.insert(50, "Hannibal Buress: Animal Furnace")
+    tree.insert(98, "Animals United")
 
     assert_equal 50, tree.root.left.right.rating
+    assert_equal 98, tree.root.right.right.rating
   end
 
   def test_insert_returns_depth
@@ -69,6 +71,21 @@ class BinarySearchTreeTest < MiniTest::Test
     return_val = tree.include?(16)
 
     assert return_val
+
+    return_val = tree.include?(72)
+
+    refute return_val
+  end
+
+  def test_for_depth_method
+    tree = BinarySearchTree.new
+    tree.insert(61, "Bill & Ted's Excellent Adventure")
+    tree.insert(16, "Johnny English")
+    tree.insert(92, "Sharknado 3")
+    tree.insert(50, "Hannibal Buress: Animal Furnace")
+
+    assert_equal 1, tree.depth_of(92)
+    assert_equal 2, tree.depth_of(50)
   end
 
 end

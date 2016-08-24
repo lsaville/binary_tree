@@ -13,26 +13,22 @@ class BinarySearchTree
     if @root.nil?
       @root = node
       counter
-      # require "pry"; binding.pry
     else
       current = @root
+
       until current.nil?
         counter += 1
         if node.rating < current.rating
-          if current.left.nil?
+          if current.left.nil?  #If I were better I could chunk this to a method
             current.left = node
             return counter
-            break
           else
             current = current.left
           end
         elsif node.rating > current.rating
-# require "pry"; binding.pry
           if current.right.nil?
-# require "pry"; binding.pry
             current.right = node
             return counter
-            break
           else
             current = current.right
           end
@@ -41,8 +37,27 @@ class BinarySearchTree
     end
   end
 
-  def include?
+
+  def include?(rating)
+    current = @root
+    until current.nil?
+      if rating == current.rating
+        return true
+      elsif rating < current.rating
+        current = current.left
+      elsif rating > current.rating
+        current = current.right
+      end
+    end
+    if current.nil?
+      false
+    end
   end
+
+  def depth_of(rating)
+    1
+  end
+
 end
 
 
