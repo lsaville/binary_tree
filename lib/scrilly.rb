@@ -1,4 +1,21 @@
-
+def depth_of
+  current = @root
+  counter = 0
+  until current.nil?
+    if rating == current.rating
+      return counter
+    elsif rating < current.rating
+      current = current.left
+      counter += 1
+    elsif rating > current.rating
+      current = current.right
+      counter += 1
+    end
+  end
+  if current.nil?
+    "Not in tree."
+  end
+end
 
   current = @root
   until current.nil? #this is the searching
