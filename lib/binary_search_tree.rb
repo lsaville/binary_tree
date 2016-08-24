@@ -73,50 +73,34 @@ class BinarySearchTree
     end
   end
 
+  def max
+    current = @root
+    until current.nil?
+# require "pry"; binding.pry
+      if current.right.nil?
+        return result = {current.title=>current.rating}
+        break
+        # require "pry"; binding.pry
+      else
+        current = current.right
+        # require "pry"; binding.pry
+      end
+    end
+  end
+
+  def min
+    current = @root
+    until current.nil?
+# require "pry"; binding.pry
+      if current.left.nil?
+        return result = {current.title=>current.rating}
+        break
+        # require "pry"; binding.pry
+      else
+        current = current.left
+        # require "pry"; binding.pry
+      end
+    end
+  end
+
 end
-
-
-
-
-# def insert(rating, title)
-#   if @root_value == nil
-#     @root_value = Node.new(rating, title)
-#   else
-#     insert_in_branches(rating, title)
-#   end
-# end
-
-# passing the new node = Node.new
-# node.rating
-# current = @root_value
-# if node.rating < current
-#    if nil, assign node = current.left
-#   else current = current.left
-#   insert(current)
-# if >
-#   current = current.right
-
-
-# node = Node.new(rating, title)
-# until current == nil
-#   if node.rating < current.rating
-#     current = current.left
-#   elsif node.rating > current.rating
-#     current = current.right
-
-
-    # if node.rating < current.rating
-    #   if current.left == nil
-    #     current.left = node
-    #   else
-    #     current.left = current
-    #     insert_in_branches(rating, title)
-    #   end
-    # elsif node.rating > current.rating
-    #   if current.right == nil
-    #     current.right = node
-    #   else
-    #     current.right = current
-    #     insert_in_branches(rating, title)
-    #   end
-    # end

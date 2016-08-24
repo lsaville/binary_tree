@@ -88,4 +88,32 @@ class BinarySearchTreeTest < MiniTest::Test
     assert_equal 2, tree.depth_of(50)
   end
 
+  def test_for_max_method
+    tree = BinarySearchTree.new
+    tree.insert(61, "Bill & Ted's Excellent Adventure")
+    tree.insert(16, "Johnny English")
+    tree.insert(92, "Sharknado 3")
+    tree.insert(50, "Hannibal Buress: Animal Furnace")
+
+    assert_equal ({"Sharknado 3"=>92}), tree.max
+
+    tree.insert(99, "Super Test")
+
+    assert_equal ({"Super Test"=>99}), tree.max
+  end
+
+  def test_for_min_method
+    tree = BinarySearchTree.new
+    tree.insert(61, "Bill & Ted's Excellent Adventure")
+    tree.insert(16, "Johnny English")
+    tree.insert(92, "Sharknado 3")
+    tree.insert(50, "Hannibal Buress: Animal Furnace")
+
+    assert_equal ({"Johnny English"=>16}), tree.min
+
+    tree.insert(1, "Super Bad Movie")
+
+    assert_equal ({"Super Bad Movie"=>1}), tree.min
+  end
+
 end
